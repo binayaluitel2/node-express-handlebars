@@ -3,8 +3,10 @@ var express = require("express");
 var PORT = process.env.PORT || 8000;
 var app = express();
 
+// Static content
 app.use(express.static("public"));
 
+// Application body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -18,5 +20,5 @@ var routes = require("./controllers/burgers_controller.js");
 app.use(routes);
 
 app.listen(PORT, function () {
-    console.log("Listening on port:%s", PORT);
+  console.log("Listening on port:%s", PORT);
 });

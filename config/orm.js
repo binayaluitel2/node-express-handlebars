@@ -1,5 +1,7 @@
+//MYSQL connectio
 var connection = require("./connection.js");
 
+// Helper function for SQL syntax.
 function printQuestionMarks(num) {
   var arr = [];
 
@@ -20,6 +22,7 @@ function objToSql(ob) {
   return arr.toString();
 }
 
+// Retrieve and store data in database
 var orm = {
   all: function (tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
